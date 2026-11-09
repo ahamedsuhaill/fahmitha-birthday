@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Happy Birthday Fahmitha ❤️ — The Love Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bangers&family=Caveat:wght@400;600;700&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"/>
+<style>
+/* ═══════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#0f0a08;
+  --paper:#fdf6ec;
+  --paper2:#fff8f0;
+  --rose:#e8294a;
+  --rose-d:#b01e35;
+  --gold:#d4a017;
+  --gold-l:#f5c842;
+  --cream:#fef9f0;
+  --sky:#1a3a5c;
+  --ocean:#1b6ca8;
+  --panel-b:4px solid #0f0a08;
+  --shadow:6px 6px 0 #0f0a08;
+}
+html{scroll-behavior:smooth;}
+body{
+  background:#1a0d08;
+  font-family:'Montserrat',sans-serif;
+  overflow-x:hidden;
+  cursor:none;
+}
+
+/* ═══════════════════════════════════════
+   CUSTOM CURSOR
+═══════════════════════════════════════ */
+.cursor{
+  position:fixed;width:20px;height:20px;border-radius:50%;
+  background:var(--rose);pointer-events:none;z-index:9999;
+  transform:translate(-50%,-50%);mix-blend-mode:multiply;
+  transition:transform .08s ease;
+}
+.cursor-ring{
+  position:fixed;width:38px;height:38px;border-radius:50%;
+  border:2px solid var(--gold);pointer-events:none;z-index:9998;
+  transform:translate(-50%,-50%);
+  transition:left .1s ease,top .1s ease;
+}
+
+/* ═══════════════════════════════════════
+   LOADER — COMIC STYLE
+═══════════════════════════════════════ */
+#loader{
+  position:fixed;inset:0;background:#1a0d08;z-index:9000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transition:opacity 1s ease,visibility 1s ease;
+}
+#loader.hide{opacity:0;visibility:hidden;}
+.ld-panel{
+  background:var(--paper);border:5px solid var(--ink);
+  box-shadow:10px 10px 0 var(--rose);
+  padding:40px 60px;text-align:center;
+  position:relative;
+}
+.ld-panel::before{
+  content:'★ LOADING YOUR STORY ★';
+  position:absolute;top:-16px;left:50%;transform:translateX(-50%);
+  background:var(--gold);color:var(--ink);font-family:'Bangers',cursive;
+  font-size:14px;letter-spacing:3px;padding:4px 16px;
+  border:3px solid var(--ink);white-space:nowrap;
+}
+.ld-emoji{font-size:72px;animation:ldBounce 0.6s ease-in-out infinite alternate;}
+.ld-title{
+  font-family:'Bangers',cursive;font-size:clamp(32px,6vw,56px);
+  color:var(--ink);letter-spacing:3px;margin-top:12px;
+  line-height:1;
+}
+.ld-sub{font-family:'Caveat',cursive;font-size:22px;color:#555;margin-top:8px;}
+.ld-dots{display:flex;gap:10px;justify-content:center;margin-top:20px;}
+.ld-dot{
+  width:14px;height:14px;border-radius:50%;border:3px solid var(--ink);
+  animation:ldDot .8s ease-in-out infinite;
+}
+.ld-dot:nth-child(1){background:var(--rose);animation-delay:0s;}
+.ld-dot:nth-child(2){background:var(--gold);animation-delay:.15s;}
+.ld-dot:nth-child(3){background:var(--sky);animation-delay:.3s;}
+@keyframes ldBounce{from{transform:scale(1) rotate(-5deg)}to{transform:scale(1.15) rotate(5deg)}}
+@keyframes ldDot{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+/* ═══════════════════════════════════════
+   HALFTONE PATTERN
+═══════════════════════════════════════ */
+.halftone{
+  background-image:radial-gradient(circle,rgba(0,0,0,.18) 1.5px,transparent 1.5px);
+  background-size:14px 14px;
+}
+.halftone-lt{
+  background-image:radial-gradient(circle,rgba(255,255,255,.12) 1.5px,transparent 1.5px);
+  background-size:14px 14px;
+}
+
+/* ═══════════════════════════════════════
+   MUSIC BAR
+═══════════════════════════════════════ */
+.music-bar{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--ink);border-top:4px solid var(--rose);
+  height:64px;display:flex;align-items:center;
+  padding:0 16px;gap:14px;z-index:800;
+}
+.m-record{
+  width:44px;height:44px;border-radius:50%;
+  background:conic-gradient(var(--rose) 0deg,var(--gold) 120deg,var(--sky) 240deg,var(--rose) 360deg);
+  border:3px solid #fff;flex-shrink:0;
+  animation:spin 3s linear infinite;
+}
+.m-record.paused{animation-play-state:paused;}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+.m-info{flex:1;overflow:hidden;}
+.m-song{font-family:'Bangers',cursive;font-size:17px;letter-spacing:2px;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.m-artist{font-family:'Caveat',cursive;font-size:13px;color:rgba(255,255,255,.55);}
+.m-ctrl{display:flex;gap:8px;}
+.mbtn{
+  background:var(--rose);border:3px solid #fff;
+  color:#fff;font-size:16px;width:38px;height:38px;
+  border-radius:4px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform .15s,background .15s;font-family:'Bangers',cursive;
+}
+.mbtn:hover{transform:scale(1.12);background:var(--rose-d);}
+.mbtn.play{background:var(--gold);color:var(--ink);}
+.mbtn.play:hover{background:var(--gold-l);}
+.m-prog-wrap{position:absolute;top:0;left:0;right:0;height:4px;background:rgba(255,255,255,.1);cursor:pointer;}
+.m-prog{height:100%;background:linear-gradient(90deg,var(--rose),var(--gold));width:0%;transition:width .5s linear;}
+
+/* ═══════════════════════════════════════
+   NAV — COMIC CHAPTER TABS
+═══════════════════════════════════════ */
+.nav-tabs{
+  position:fixed;right:0;top:50%;transform:translateY(-50%);
+  display:flex;flex-direction:column;gap:4px;z-index:700;
+}
+.ntab{
+  background:var(--ink);border:3px solid var(--gold);border-right:none;
+  color:var(--gold);font-family:'Bangers',cursive;font-size:11px;
+  letter-spacing:2px;padding:8px 10px;cursor:pointer;
+  transition:all .2s;writing-mode:vertical-rl;text-orientation:mixed;
+  min-height:60px;display:flex;align-items:center;justify-content:center;
+}
+.ntab:hover,.ntab.on{background:var(--rose);color:#fff;border-color:var(--rose);}
+
+/* ═══════════════════════════════════════
+   SECTION BASE
+═══════════════════════════════════════ */
+section{position:relative;z-index:1;min-height:100vh;padding:60px 20px 90px;}
+
+/* ═══════════════════════════════════════
+   SECTION 1 — HERO (COMIC COVER)
+═══════════════════════════════════════ */
+#hero{
+  background:#1a0d08;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  overflow:hidden;text-align:center;padding:0;
+}
+.hero-bg{
+  position:absolute;inset:0;z-index:0;
+  background:radial-gradient(ellipse at center,#3d1010 0%,#1a0d08 70%);
+}
+.slideshow-cover{position:absolute;inset:0;z-index:1;overflow:hidden;}
+.slide-cover{
+  position:absolute;inset:0;background-size:cover;background-position:center;
+  opacity:0;transition:opacity 1.6s ease;
+  filter:brightness(.3) saturate(.8);
+}
+.slide-cover.active{opacity:1;animation:kenBurns 7s ease-out forwards;}
+@keyframes kenBurns{0%{transform:scale(1.08)}100%{transform:scale(1)}}
+
+.hero-content{position:relative;z-index:3;padding:40px 20px 100px;}
+
+.comic-cover-label{
+  display:inline-block;
+  background:var(--rose);color:#fff;
+  font-family:'Bangers',cursive;font-size:clamp(13px,2vw,18px);
+  letter-spacing:5px;padding:6px 24px;
+  border:3px solid #fff;
+  box-shadow:4px 4px 0 var(--ink);
+  margin-bottom:20px;
+  opacity:0;animation:fadeUp 1s .3s forwards;
+}
+.comic-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(56px,13vw,130px);
+  line-height:.95;
+  color:#fff;
+  text-shadow:
+    6px 6px 0 var(--rose),
+    12px 12px 0 rgba(0,0,0,.4);
+  letter-spacing:3px;
+  animation:fadeUp 1.2s .1s both;
+}
+.comic-title .name-line{
+  display:block;
+  color:var(--gold-l);
+  text-shadow:
+    5px 5px 0 var(--gold),
+    10px 10px 0 rgba(0,0,0,.4);
+  font-size:clamp(64px,15vw,150px);
+}
+.comic-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(20px,4vw,36px);
+  color:rgba(255,255,255,.9);
+  margin-top:16px;
+  letter-spacing:1px;
+  opacity:0;animation:fadeUp 1s .7s forwards;
+}
+.comic-hearts{
+  font-size:clamp(28px,5vw,48px);
+  margin-top:12px;
+  animation:heartRow 1.5s ease-in-out infinite;
+  opacity:0;animation:heartRow 1.5s infinite,fadeIn .8s 1s forwards;
+}
+@keyframes heartRow{0%,100%{letter-spacing:8px}50%{letter-spacing:16px}}
+
+.hero-price-tag{
+  display:inline-block;
+  background:var(--paper);color:var(--ink);
+  font-family:'Bangers',cursive;font-size:clamp(14px,2vw,20px);
+  letter-spacing:2px;padding:8px 28px;
+  border:4px solid var(--ink);
+  box-shadow:var(--shadow);
+  margin-top:28px;
+  opacity:0;animation:fadeUp 1s 1.2s forwards;
+  position:relative;
+}
+.hero-price-tag::before{content:'';position:absolute;left:-1px;top:50%;transform:translateY(-50%);width:16px;height:16px;border-radius:50%;background:var(--ink);}
+
+.scroll-hint-comic{
+  position:absolute;bottom:90px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:6px;
+  opacity:0;animation:fadeIn 1s 2s forwards;z-index:4;
+}
+.scroll-bubble{
+  background:var(--paper);border:3px solid var(--ink);
+  box-shadow:3px 3px 0 var(--ink);
+  font-family:'Caveat',cursive;font-size:16px;color:var(--ink);
+  padding:6px 18px;position:relative;
+}
+.scroll-bubble::after{
+  content:'';position:absolute;bottom:-12px;left:50%;transform:translateX(-50%);
+  width:0;height:0;
+  border-left:8px solid transparent;border-right:8px solid transparent;
+  border-top:12px solid var(--ink);
+}
+.scroll-arr2{margin-top:14px;font-size:24px;animation:bounce2 1s ease-in-out infinite;}
+@keyframes bounce2{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ═══════════════════════════════════════
+   SECTION 2 — COMIC STORY
+═══════════════════════════════════════ */
+#story{
+  background:var(--paper);
+  padding-top:60px;padding-bottom:100px;
+}
+.story-header{
+  text-align:center;margin-bottom:48px;
+}
+.story-header-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(36px,7vw,72px);
+  color:var(--ink);
+  letter-spacing:4px;
+  display:inline-block;
+  background:var(--gold-l);
+  padding:8px 32px;
+  border:4px solid var(--ink);
+  box-shadow:var(--shadow);
+}
+.story-header-sub{
+  font-family:'Caveat',cursive;
+  font-size:clamp(18px,3vw,26px);
+  color:#555;margin-top:16px;
+}
+
+/* CHAPTER LABEL */
+.ch-label{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:20px;
+}
+.ch-num{
+  background:var(--rose);color:#fff;
+  font-family:'Bangers',cursive;font-size:22px;
+  width:44px;height:44px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);
+}
+.ch-name{
+  font-family:'Bangers',cursive;font-size:clamp(22px,4vw,34px);
+  color:var(--ink);letter-spacing:3px;
+}
+
+/* PANEL ROW */
+.panel-row{
+  display:grid;gap:16px;max-width:1100px;margin:0 auto 48px;
+  align-items:start;
+}
+.panel-row.one  {grid-template-columns:1fr;}
+.panel-row.two  {grid-template-columns:1fr 1fr;}
+.panel-row.three{grid-template-columns:1fr 1fr 1fr;}
+.panel-row.big-left {grid-template-columns:2fr 1fr;}
+.panel-row.big-right{grid-template-columns:1fr 2fr;}
+
+/* PANEL */
+.panel{
+  background:var(--paper2);
+  border:var(--panel-b);
+  position:relative;overflow:hidden;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.panel:hover{transform:translate(-3px,-3px);box-shadow:9px 9px 0 var(--ink);}
+.panel.rose-bg {background:#ffe0e6;}
+.panel.gold-bg {background:#fff8dc;}
+.panel.sky-bg  {background:#e0f0ff;}
+.panel.dark-bg {background:#1a1008;color:#fff;}
+.panel.twist-bg{background:#1a0d08;border-color:var(--gold);box-shadow:0 0 0 4px var(--gold),8px 8px 0 var(--ink);}
+
+.panel-inner{padding:20px 22px;}
+
+/* Chapter corner tag */
+.panel-tag{
+  position:absolute;top:0;left:0;
+  background:var(--rose);color:#fff;
+  font-family:'Bangers',cursive;font-size:12px;letter-spacing:2px;
+  padding:4px 12px;border-bottom:3px solid var(--ink);border-right:3px solid var(--ink);
+  z-index:2;
+}
+.panel-tag.gold{background:var(--gold);color:var(--ink);}
+.panel-tag.sky{background:var(--sky);color:#fff;}
+.panel-tag.pink{background:#ff69b4;color:#fff;}
+
+/* Panel text */
+.panel-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(20px,3.5vw,34px);
+  color:var(--ink);letter-spacing:2px;
+  line-height:1.1;margin-bottom:10px;
+}
+.panel-title.white{color:#fff;}
+.panel-title.gold{color:var(--gold-l);}
+.panel-body{
+  font-family:'Caveat',cursive;
+  font-size:clamp(15px,2.2vw,20px);
+  line-height:1.65;color:#333;
+}
+.panel-body.white{color:rgba(255,255,255,.9);}
+.panel-body.italic{font-style:italic;}
+
+/* SPEECH BUBBLE */
+.bubble{
+  background:#fff;border:3px solid var(--ink);
+  border-radius:16px;padding:12px 18px;
+  position:relative;margin:14px 0;
+  box-shadow:3px 3px 0 var(--ink);
+  font-family:'Caveat',cursive;
+  font-size:clamp(15px,2.2vw,20px);
+  line-height:1.5;color:var(--ink);
+  display:inline-block;max-width:100%;
+}
+.bubble::after{
+  content:'';position:absolute;bottom:-18px;left:24px;
+  width:0;height:0;
+  border-left:10px solid transparent;
+  border-right:10px solid transparent;
+  border-top:18px solid var(--ink);
+}
+.bubble.right::after{left:auto;right:24px;}
+.bubble.top::after{
+  top:-18px;bottom:auto;
+  border-top:none;border-bottom:18px solid var(--ink);
+}
+.bubble.tamil{background:#fff9e6;border-color:var(--gold);}
+.bubble.tamil::after{border-top-color:var(--gold);}
+.bubble.rose-b{background:#ffe0e6;border-color:var(--rose);}
+.bubble.rose-b::after{border-top-color:var(--rose);}
+.bubble.shout{
+  border-radius:0;
+  clip-path:polygon(2% 10%,8% 0,92% 0,98% 10%,100% 50%,98% 90%,92% 100%,8% 100%,2% 90%,0 50%);
+  background:var(--gold-l);border:4px solid var(--ink);
+  font-size:clamp(18px,3vw,26px);font-weight:700;text-align:center;
+}
+.bubble.shout::after{display:none;}
+
+/* SPEAKER LABEL */
+.speaker{
+  font-family:'Bangers',cursive;font-size:13px;letter-spacing:2px;
+  color:#666;margin-bottom:4px;display:block;
+}
+
+/* COMIC CHARACTER — CSS ART */
+.char{display:flex;flex-direction:column;align-items:center;gap:0;}
+
+/* Suhail */
+.suhail .c-head{
+  width:52px;height:52px;border-radius:50%;
+  background:#8B6914;border:3px solid var(--ink);position:relative;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.suhail .c-hair{
+  position:absolute;top:-6px;left:3px;right:3px;height:28px;
+  background:#1a0a00;border-radius:50% 50% 0 0;border:2px solid var(--ink);
+}
+.suhail .c-beard{
+  width:38px;height:12px;background:#1a0a00;
+  border-radius:0 0 50% 50%;margin-bottom:3px;border:2px solid var(--ink);
+  position:absolute;bottom:2px;
+}
+.suhail .c-body{
+  width:64px;height:60px;
+  background:#3a7bd5;border:3px solid var(--ink);
+  border-top:none;border-radius:0 0 8px 8px;
+  position:relative;
+}
+.suhail .c-body::before,.suhail .c-body::after{
+  content:'';position:absolute;top:12px;
+  width:16px;height:44px;
+  background:#3a7bd5;border:3px solid var(--ink);border-radius:4px;
+}
+.suhail .c-body::before{left:-16px;}
+.suhail .c-body::after{right:-16px;}
+
+/* Fahmitha */
+.fahmitha .c-head{
+  width:52px;height:52px;border-radius:50%;
+  background:#C68642;border:3px solid var(--ink);position:relative;
+}
+.fahmitha .c-hijab{
+  position:absolute;inset:-8px -14px;
+  background:#1a4fa8;border:3px solid var(--ink);border-radius:50%;
+  clip-path:polygon(50% 0%,100% 15%,100% 100%,0 100%,0 15%);
+}
+.fahmitha .c-face{
+  position:absolute;inset:8px;border-radius:50%;background:#C68642;
+  border:2px solid var(--ink);display:flex;align-items:center;justify-content:center;
+  font-size:18px;
+}
+.fahmitha .c-body{
+  width:52px;height:65px;
+  background:#1a4fa8;border:3px solid var(--ink);
+  border-top:none;border-radius:0 0 24px 24px;position:relative;
+}
+.fahmitha .c-dress{
+  position:absolute;bottom:0;left:-8px;right:-8px;
+  height:35px;background:#1a4fa8;
+  border:3px solid var(--ink);border-radius:0 0 24px 24px;
+}
+
+/* EMOJI CHARACTERS (simpler option) */
+.emoji-scene{
+  font-size:clamp(48px,8vw,80px);
+  text-align:center;padding:16px 0;
+  line-height:1.2;
+}
+.emoji-scene .small{font-size:.6em;}
+.emoji-scene .tiny{font-size:.4em;}
+
+/* ACTION LINES */
+.action-bg{
+  background:repeating-conic-gradient(from 0deg,transparent 0deg,transparent 9deg,rgba(0,0,0,.04) 9deg,rgba(0,0,0,.04) 10deg);
+  background-size:200px 200px;background-position:center;
+}
+
+/* SOUND FX */
+.sfx{
+  font-family:'Bangers',cursive;
+  font-size:clamp(32px,6vw,64px);
+  color:var(--rose);
+  -webkit-text-stroke:3px var(--ink);
+  text-stroke:3px var(--ink);
+  transform:rotate(-8deg);display:inline-block;
+  line-height:1;
+}
+.sfx.gold{color:var(--gold-l);}
+.sfx.sky{color:var(--ocean);}
+.sfx.small{font-size:clamp(22px,4vw,42px);}
+
+/* CAPTION BOX (bottom of panel, like comics) */
+.caption{
+  background:var(--gold-l);border-top:3px solid var(--ink);
+  padding:8px 16px;margin-top:14px;
+  font-family:'Caveat',cursive;font-size:14px;font-style:italic;color:var(--ink);
+}
+.caption.rose{background:#ffc0cb;}
+.caption.blue{background:#cce5ff;}
+.caption.dark{background:var(--ink);color:var(--gold-l);}
+
+/* TWIST SECTION */
+.twist-panel{
+  background:var(--ink);border:5px solid var(--gold);
+  box-shadow:0 0 0 2px var(--ink),0 0 0 7px var(--gold);
+  max-width:1100px;margin:0 auto;position:relative;overflow:hidden;
+}
+.twist-panel::before{
+  content:'';position:absolute;inset:0;
+  background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(212,160,23,.06) 10px,rgba(212,160,23,.06) 20px);
+}
+.twist-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(44px,10vw,110px);
+  color:var(--gold-l);
+  -webkit-text-stroke:3px var(--ink);
+  text-stroke:3px var(--ink);
+  text-align:center;line-height:.95;
+  position:relative;z-index:1;
+  animation:twistShake .5s ease-in-out infinite;
+}
+@keyframes twistShake{0%,100%{transform:rotate(0)}25%{transform:rotate(-1.5deg)}75%{transform:rotate(1.5deg)}}
+.twist-reveal{
+  font-family:'Caveat',cursive;
+  font-size:clamp(18px,3vw,28px);
+  color:#fff;text-align:center;
+  position:relative;z-index:1;line-height:1.6;
+}
+.twist-emoji{font-size:clamp(32px,6vw,64px);display:block;text-align:center;}
+.vs-row{
+  display:flex;align-items:center;justify-content:center;gap:24px;
+  flex-wrap:wrap;margin:20px 0;position:relative;z-index:1;
+}
+.vs-box{
+  background:var(--paper);border:4px solid var(--gold);
+  box-shadow:var(--shadow);padding:16px 24px;text-align:center;
+  font-family:'Caveat',cursive;border-radius:4px;min-width:160px;
+}
+.vs-name{font-family:'Bangers',cursive;font-size:24px;color:var(--ink);letter-spacing:2px;}
+.vs-info{font-size:16px;color:#444;}
+.vs-emoji{font-size:36px;display:block;margin-bottom:4px;}
+.vs-sep{
+  font-family:'Bangers',cursive;font-size:48px;color:var(--rose);
+  -webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink);
+}
+.never-met-banner{
+  background:var(--rose);color:#fff;
+  font-family:'Bangers',cursive;font-size:clamp(20px,4vw,40px);
+  letter-spacing:4px;text-align:center;padding:12px 24px;
+  border:4px solid var(--gold);border-radius:4px;
+  position:relative;z-index:1;
+  animation:neverBlink .8s ease-in-out infinite alternate;
+}
+@keyframes neverBlink{from{background:var(--rose)}to{background:var(--rose-d)}}
+.allah-plan{
+  font-family:'Bangers',cursive;
+  font-size:clamp(28px,5vw,56px);
+  color:var(--gold-l);-webkit-text-stroke:2px var(--ink);text-stroke:2px var(--ink);
+  text-align:center;position:relative;z-index:1;margin-top:16px;
+}
+
+/* MILESTONES COMIC ROW */
+.milestone-row{
+  display:flex;gap:0;align-items:stretch;
+  max-width:1100px;margin:0 auto;overflow:hidden;
+  border:var(--panel-b);
+}
+.ms{
+  flex:1;border-right:var(--panel-b);padding:28px 20px;
+  text-align:center;position:relative;
+  background:var(--paper2);transition:background .2s;
+}
+.ms:last-child{border-right:none;}
+.ms:hover{background:var(--gold-l);}
+.ms-icon{font-size:44px;display:block;animation:floatY 3s ease-in-out infinite;}
+.ms-date{font-family:'Bangers',cursive;font-size:16px;letter-spacing:3px;color:var(--rose);display:block;margin-top:8px;}
+.ms-title{font-family:'Bangers',cursive;font-size:clamp(18px,3vw,26px);color:var(--ink);margin-top:4px;}
+.ms-desc{font-family:'Caveat',cursive;font-size:14px;color:#555;margin-top:6px;line-height:1.5;}
+
+/* BABY SPECIAL */
+.baby-panel{
+  background:linear-gradient(135deg,#ffe4f0,#fff0fa);
+  border:5px solid #ff69b4;
+  box-shadow:8px 8px 0 #ff69b4;
+  max-width:1100px;margin:48px auto 0;padding:36px;
+  text-align:center;position:relative;overflow:hidden;
+}
+.baby-panel::before{
+  content:'🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸';
+  font-size:20px;position:absolute;top:8px;left:0;right:0;text-align:center;
+  letter-spacing:8px;opacity:.4;
+}
+.baby-panel::after{
+  content:'🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸 🌸';
+  font-size:20px;position:absolute;bottom:8px;left:0;right:0;text-align:center;
+  letter-spacing:8px;opacity:.4;
+}
+.baby-title{
+  font-family:'Bangers',cursive;font-size:clamp(32px,7vw,72px);
+  color:#cc2277;letter-spacing:3px;-webkit-text-stroke:2px #cc2277;
+  text-stroke:2px #cc2277;
+  display:block;margin-bottom:12px;
+}
+.baby-emoji{font-size:72px;animation:babyBounce 1s ease-in-out infinite alternate;}
+@keyframes babyBounce{from{transform:scale(1) rotate(-5deg)}to{transform:scale(1.12) rotate(5deg)}}
+.baby-text{
+  font-family:'Caveat',cursive;font-size:clamp(18px,3vw,26px);
+  color:#8b1a4a;line-height:1.7;max-width:600px;margin:0 auto;
+}
+
+/* ═══════════════════════════════════════
+   SECTION 3 — PHOTO GALLERY
+═══════════════════════════════════════ */
+#gallery{
+  background:var(--ink);
+  padding-top:60px;padding-bottom:100px;
+}
+.gallery-header{text-align:center;margin-bottom:36px;}
+.gallery-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(36px,7vw,72px);
+  color:var(--gold-l);
+  letter-spacing:4px;
+  -webkit-text-stroke:2px var(--gold);
+  text-stroke:2px var(--gold);
+  display:inline-block;
+  position:relative;
+}
+.gallery-title::after{
+  content:'ANDAMAN 🌊';display:block;
+  font-size:.45em;color:rgba(255,255,255,.5);
+  letter-spacing:6px;-webkit-text-stroke:0;text-stroke:0;
+}
+.gallery-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-rows:280px;
+  gap:6px;max-width:1100px;margin:0 auto;
+  border:5px solid var(--gold);
+  box-shadow:10px 10px 0 rgba(212,160,23,.3);
+}
+.gallery-grid .g-item:nth-child(1){grid-column:span 2;}
+.gallery-grid .g-item:nth-child(4){grid-column:span 2;}
+.gallery-grid .g-item:nth-child(7){grid-column:span 3;height:360px;}
+.g-item{overflow:hidden;position:relative;cursor:pointer;border:2px solid var(--gold);}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease,filter .5s ease;filter:saturate(1.1);}
+.g-item:hover img{transform:scale(1.08);}
+.g-item::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,transparent 50%);pointer-events:none;}
+.g-num{
+  position:absolute;top:8px;left:8px;
+  background:var(--rose);color:#fff;
+  font-family:'Bangers',cursive;font-size:16px;letter-spacing:1px;
+  padding:2px 10px;border:2px solid #fff;z-index:2;
+}
+.g-cap{
+  position:absolute;bottom:12px;left:12px;
+  font-family:'Caveat',cursive;font-size:16px;
+  color:rgba(255,255,255,.9);z-index:2;
+  text-shadow:1px 1px 4px rgba(0,0,0,.8);
+  opacity:0;transition:opacity .3s;
+}
+.g-item:hover .g-cap{opacity:1;}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:900;display:none;align-items:center;justify-content:center;flex-direction:column;}
+.lightbox.open{display:flex;}
+.lb-frame{border:5px solid var(--gold);box-shadow:10px 10px 0 rgba(212,160,23,.4);}
+.lb-img{max-width:88vw;max-height:80vh;display:block;animation:fadeUp .3s ease;}
+.lb-close{position:absolute;top:16px;right:20px;font-family:'Bangers',cursive;font-size:28px;color:#fff;cursor:pointer;background:var(--rose);border:3px solid #fff;padding:4px 14px;letter-spacing:2px;}
+.lb-nav{display:flex;gap:16px;margin-top:14px;}
+.lb-nav button{background:var(--ink);border:3px solid var(--gold);color:var(--gold-l);font-family:'Bangers',cursive;font-size:20px;padding:8px 24px;cursor:pointer;letter-spacing:2px;transition:background .2s;}
+.lb-nav button:hover{background:var(--gold);color:var(--ink);}
+
+/* ═══════════════════════════════════════
+   SECTION 4 — LOVE LETTER (COMIC PAGE)
+═══════════════════════════════════════ */
+#letter{
+  background:#f5ede0;
+  padding-top:60px;padding-bottom:100px;
+}
+.letter-comic{
+  max-width:800px;margin:0 auto;
+  background:var(--paper2);
+  border:5px solid var(--ink);
+  box-shadow:10px 10px 0 var(--rose);
+  position:relative;overflow:hidden;
+}
+.letter-comic-top{
+  background:var(--rose);padding:16px 28px;
+  display:flex;align-items:center;gap:14px;
+  border-bottom:4px solid var(--ink);
+}
+.letter-comic-top-title{
+  font-family:'Bangers',cursive;font-size:clamp(22px,4vw,36px);
+  color:#fff;letter-spacing:3px;
+}
+.letter-comic-top-icon{font-size:36px;}
+.letter-body-wrap{padding:clamp(28px,5vw,56px);}
+.letter-lines{
+  background-image:repeating-linear-gradient(transparent,transparent 31px,rgba(0,0,0,.08) 31px,rgba(0,0,0,.08) 32px);
+  background-size:100% 32px;
+}
+.l-sal{
+  font-family:'Caveat',cursive;font-size:clamp(20px,3.5vw,28px);
+  color:var(--rose);margin-bottom:20px;font-weight:600;
+}
+.l-body{
+  font-family:'Caveat',cursive;font-size:clamp(17px,2.5vw,22px);
+  line-height:2;color:#333;white-space:pre-line;
+}
+.l-sign{margin-top:32px;text-align:right;}
+.l-sign-name{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(32px,5vw,56px);
+  color:var(--rose);display:block;
+}
+.l-sign-sub{font-family:'Caveat',cursive;font-size:16px;color:#888;letter-spacing:2px;}
+.letter-stamp{
+  position:absolute;bottom:28px;right:28px;
+  width:70px;height:84px;
+  background:var(--gold-l);border:4px solid var(--ink);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  transform:rotate(8deg);
+  font-family:'Bangers',cursive;font-size:11px;letter-spacing:1px;
+  color:var(--ink);text-align:center;
+  box-shadow:3px 3px 0 var(--ink);
+}
+.letter-stamp span{font-size:28px;display:block;margin-bottom:4px;}
+
+/* ═══════════════════════════════════════
+   SECTION 5 — FINALE (SPLASH PAGE)
+═══════════════════════════════════════ */
+#finale{
+  background:var(--ink);
+  min-height:100vh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;
+  padding:60px 20px 100px;text-align:center;
+  position:relative;overflow:hidden;
+}
+.finale-bg-pattern{
+  position:absolute;inset:0;
+  background:
+    repeating-conic-gradient(from 0deg at 50% 50%,transparent 0deg,transparent 25deg,rgba(212,160,23,.04) 25deg,rgba(212,160,23,.04) 26deg);
+  pointer-events:none;
+}
+.splash-box{
+  background:var(--paper);
+  border:6px solid var(--gold);
+  box-shadow:0 0 0 3px var(--ink),0 0 0 9px var(--gold),16px 16px 0 rgba(212,160,23,.3);
+  padding:clamp(32px,6vw,72px) clamp(28px,6vw,80px);
+  max-width:800px;width:100%;position:relative;z-index:1;
+}
+.splash-label{
+  font-family:'Bangers',cursive;font-size:14px;letter-spacing:6px;
+  color:var(--rose);display:block;margin-bottom:12px;
+}
+.splash-title{
+  font-family:'Bangers',cursive;
+  font-size:clamp(28px,6vw,56px);
+  color:var(--ink);letter-spacing:3px;line-height:1;
+}
+.splash-name{
+  font-family:'Bangers',cursive;
+  font-size:clamp(56px,13vw,120px);
+  color:var(--rose);
+  -webkit-text-stroke:3px var(--rose-d);text-stroke:3px var(--rose-d);
+  line-height:.9;display:block;
+  animation:nameGlow 2s ease-in-out infinite alternate;
+}
+@keyframes nameGlow{from{text-shadow:0 0 20px rgba(232,41,74,.4)}to{text-shadow:0 0 60px rgba(232,41,74,.8),0 0 100px rgba(212,160,23,.4)}}
+.splash-heart{font-size:clamp(44px,8vw,80px);animation:heartBig 1.2s ease-in-out infinite;display:block;margin:8px 0;}
+@keyframes heartBig{0%,100%{transform:scale(1)}50%{transform:scale(1.3)}}
+.splash-quote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(16px,2.5vw,22px);font-style:italic;
+  color:#555;line-height:1.9;max-width:560px;margin:16px auto;
+}
+.splash-forever{
+  font-family:'Great Vibes',cursive;
+  font-size:clamp(32px,6vw,60px);
+  color:var(--rose);display:block;margin-top:8px;
+}
+.splash-sign{
+  display:inline-block;
+  background:var(--gold-l);border:4px solid var(--ink);
+  box-shadow:var(--shadow);
+  padding:10px 32px;margin-top:24px;
+  font-family:'Bangers',cursive;font-size:clamp(18px,3vw,28px);
+  color:var(--ink);letter-spacing:3px;
+}
+.finale-hearts-wrap{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden;}
+.fh{position:absolute;animation:floatUpFin linear infinite;opacity:0;}
+@keyframes floatUpFin{0%{transform:translateY(0) rotate(0deg);opacity:0}10%{opacity:.8}90%{opacity:.4}100%{transform:translateY(-100vh) rotate(360deg);opacity:0}}
+
+/* ═══════════════════════════════════════
+   HELPERS / KEYFRAMES
+═══════════════════════════════════════ */
+@keyframes fadeUp  {from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeIn  {from{opacity:0}to{opacity:1}}
+@keyframes floatY  {0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+.reveal{opacity:0;transform:translateY(44px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.vis{opacity:1;transform:translateY(0);}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:760px){
+  .panel-row.two,.panel-row.big-left,.panel-row.big-right{grid-template-columns:1fr;}
+  .panel-row.three{grid-template-columns:1fr 1fr;}
+  .milestone-row{flex-direction:column;}
+  .ms{border-right:none;border-bottom:var(--panel-b);}
+  .ms:last-child{border-bottom:none;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-auto-rows:200px;}
+  .gallery-grid .g-item:nth-child(1),.gallery-grid .g-item:nth-child(4){grid-column:span 2;}
+  .gallery-grid .g-item:nth-child(7){grid-column:span 2;height:240px;}
+  .nav-tabs{display:none;}
+  .vs-row{flex-direction:column;}
+}
+@media(max-width:460px){
+  .gallery-grid{grid-template-columns:1fr;}
+  .gallery-grid .g-item:nth-child(n){grid-column:span 1!important;height:230px!important;}
+}
+</style>
+</head>
+<body>
+
+<!-- CURSOR -->
+<div class="cursor"  id="cursor"></div>
+<div class="cursor-ring" id="cRing"></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="ld-panel halftone">
+    <div class="ld-emoji">📖</div>
+    <div class="ld-title">A LOVE STORY<br/>IS LOADING...</div>
+    <div class="ld-sub">Fahmitha & Suhail ❤️</div>
+    <div class="ld-dots">
+      <div class="ld-dot"></div>
+      <div class="ld-dot"></div>
+      <div class="ld-dot"></div>
+    </div>
+  </div>
+</div>
+
+<!-- MUSIC BAR -->
+<div class="music-bar">
+  <div class="m-prog-wrap" id="progWrap"><div class="m-prog" id="prog"></div></div>
+  <div class="m-record" id="mRecord"></div>
+  <div class="m-info">
+    <div class="m-song"   id="mSong">🎵 Marandhu Poche</div>
+    <div class="m-artist" id="mArtist">Playing for Fahmitha on her special day ❤️</div>
+  </div>
+  <div class="m-ctrl">
+    <button class="mbtn" id="mPrev">⏮</button>
+    <button class="mbtn play" id="mPlay">▶</button>
+    <button class="mbtn" id="mNext">⏭</button>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-tabs">
+  <div class="ntab on" data-s="hero">COVER</div>
+  <div class="ntab" data-s="story">STORY</div>
+  <div class="ntab" data-s="gallery">PHOTOS</div>
+  <div class="ntab" data-s="letter">LETTER</div>
+  <div class="ntab" data-s="finale">FINALE</div>
+</nav>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <div class="lb-close" id="lbClose">✕ CLOSE</div>
+  <div class="lb-frame"><img class="lb-img" id="lbImg" src="" alt=""/></div>
+  <div class="lb-nav">
+    <button id="lbPrev">‹ PREV</button>
+    <button id="lbNext">NEXT ›</button>
+  </div>
+</div>
+
+<!-- ══════════════════════════════
+  SECTION 1 — HERO (COMIC COVER)
+══════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg halftone-lt"></div>
+  <div class="slideshow-cover" id="slideshow"></div>
+  <div class="hero-content">
+    <div class="comic-cover-label">★ SPECIAL EDITION · BIRTHDAY ★</div>
+    <h1 class="comic-title">
+      HAPPY<br/>BIRTHDAY
+      <span class="name-line">FAHMITHA!</span>
+    </h1>
+    <div class="comic-sub">The Love Story Allah Wrote 🤲</div>
+    <div class="comic-hearts">❤️ 🌹 ❤️ 🌹 ❤️</div>
+    <div class="hero-price-tag">FROM YOUR SUHAIL · FOREVER ❤️</div>
+  </div>
+  <div class="scroll-hint-comic">
+    <div class="scroll-bubble">Turn the page to read our story! 👇</div>
+    <div class="scroll-arr2">⬇</div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  SECTION 2 — COMIC STORY
+══════════════════════════════ -->
+<section id="story">
+
+  <div class="story-header reveal">
+    <div class="story-header-title">📖 OUR LOVE STORY</div>
+    <div class="story-header-sub">Written by Allah. Told by Suhail. For Fahmitha.</div>
+  </div>
+
+  <!-- ── CHAPTER 1: THE SEARCH ── -->
+  <div class="reveal" style="max-width:1100px;margin:0 auto 16px;">
+    <div class="ch-label">
+      <div class="ch-num">1</div>
+      <div class="ch-name">THE SEARCH</div>
+    </div>
+  </div>
+  <div class="panel-row two reveal" style="max-width:1100px;margin:0 auto 48px;">
+    <div class="panel gold-bg" style="min-height:280px;">
+      <div class="panel-tag gold">AMMA & ABBA</div>
+      <div class="panel-inner" style="padding-top:48px;">
+        <div class="emoji-scene">👨‍👩‍👦<br/><span class="small">💭📱💭</span></div>
+        <div class="panel-title">The Parents Were Searching... 🔍</div>
+        <div class="panel-body">Amma and Abba searched with all their love — looking for the right girl for their son Suhail. Every parent's most heartfelt prayer.</div>
+        <div class="caption">Somewhere in India... she existed. They just hadn't found her yet.</div>
+      </div>
+    </div>
+    <div class="panel rose-bg" style="min-height:280px;">
+      <div class="panel-tag">THE PROPOSAL</div>
+      <div class="panel-inner" style="padding-top:48px;">
+        <div class="emoji-scene">📋👩‍👧<br/><span class="small">🤲✨</span></div>
+        <div class="panel-title">They Showed Him Her Photo</div>
+        <div class="panel-body">One day, they placed her photo in front of Suhail. His heart immediately said something his mind had no words for yet...</div>
+        <div class="sfx" style="text-align:right;">BOOM!</div>
+        <div class="caption rose">That was Fahmitha. That was his answer.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHAPTER 2: THE CALL ── -->
+  <div class="reveal" style="max-width:1100px;margin:0 auto 16px;">
+    <div class="ch-label">
+      <div class="ch-num" style="background:var(--sky);">2</div>
+      <div class="ch-name">THE CALL HEARD ACROSS OCEANS</div>
+    </div>
+  </div>
+  <div class="panel-row one reveal" style="max-width:1100px;margin:0 auto 48px;">
+    <div class="panel dark-bg" style="min-height:360px;">
+      <div class="panel-tag sky">DUBAI 🇦🇪 → INDIA 🇮🇳</div>
+      <div class="panel-inner" style="padding-top:52px;">
+        <div style="display:grid;grid-template-columns:1fr auto 1fr;gap:20px;align-items:center;">
+          <div style="text-align:center;">
+            <div style="font-size:clamp(48px,8vw,80px);">🏙️<br/>👨</div>
+            <div style="font-family:'Bangers',cursive;font-size:18px;color:var(--gold-l);letter-spacing:3px;">SUHAIL</div>
+            <div style="font-family:'Caveat',cursive;font-size:14px;color:rgba(255,255,255,.6);">Dubai 🇦🇪</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:40px;">📞<br/>💫<br/>❤️</div>
+            <div style="font-family:'Bangers',cursive;font-size:14px;color:var(--gold-l);letter-spacing:4px;">RING RING!</div>
+          </div>
+          <div style="text-align:center;">
+            <div style="font-size:clamp(48px,8vw,80px);">🏡<br/>👩</div>
+            <div style="font-family:'Bangers',cursive;font-size:18px;color:var(--gold-l);letter-spacing:3px;">FAHMITHA</div>
+            <div style="font-family:'Caveat',cursive;font-size:14px;color:rgba(255,255,255,.6);">India 🇮🇳</div>
+          </div>
+        </div>
+        <!-- SPEECH BUBBLES CONVERSATION -->
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:14px;max-width:700px;margin-left:auto;margin-right:auto;">
+          <div style="text-align:left;">
+            <span class="speaker" style="color:var(--gold-l);">SUHAIL :</span>
+            <div class="bubble tamil">"உங்களுக்கு பிடிச்சிருக்கா? 🤍<br/><span style="font-size:.85em;color:#666;">(Ungaluku purichurukka?)</span>"</div>
+          </div>
+          <div style="text-align:right;">
+            <span class="speaker" style="color:var(--gold-l);display:block;">FAHMITHA :</span>
+            <div class="bubble rose-b right" style="text-align:left;">"ஆமா... பிடிச்சிருக்கு 🌸<br/><span style="font-size:.85em;color:#666;">(Aamaa... purichuruku!)</span>"<br/><br/>
+            "உங்களுக்கு பிடிச்சிருக்கா? 😊<br/><span style="font-size:.85em;color:#666;">(Ungaluku purichurukka?)</span>"</div>
+          </div>
+          <div style="text-align:left;">
+            <span class="speaker" style="color:var(--gold-l);">SUHAIL :</span>
+            <div class="bubble shout">"ரொம்ப பிடிச்சிருக்கு!! ❤️❤️❤️<br/><span style="font-size:.7em;">(ROMBA PURICHURUKU!!)</span>"</div>
+          </div>
+        </div>
+        <div class="caption dark" style="margin-top:20px;text-align:center;font-size:16px;">He called Amma and Abba immediately: <strong style="color:var(--gold-l);">"OKAY — she is the one!" ✅</strong></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHAPTER 3: THE TWIST ── -->
+  <div class="reveal" style="max-width:1100px;margin:0 auto 16px;">
+    <div class="ch-label">
+      <div class="ch-num" style="background:var(--gold);color:var(--ink);">3</div>
+      <div class="ch-name" style="color:var(--gold);">⚡ THE TWIST ⚡</div>
+    </div>
+  </div>
+  <div class="reveal" style="max-width:1100px;margin:0 auto 48px;">
+    <div class="twist-panel">
+      <div class="panel-inner" style="padding:36px 28px;">
+        <div class="twist-title">WAIT...<br/>WHAT?! 😱</div>
+        <div class="twist-emoji">🏫</div>
+        <div class="twist-reveal" style="margin:16px 0;">
+          They discovered something that left <strong>everyone</strong> speechless...
+        </div>
+        <div class="vs-row">
+          <div class="vs-box">
+            <span class="vs-emoji">👨‍💻</span>
+            <div class="vs-name">SUHAIL</div>
+            <div class="vs-info">EEE · Final Year<br/>Same College 🏫</div>
+          </div>
+          <div class="vs-sep">+</div>
+          <div class="vs-box">
+            <span class="vs-emoji">👩‍🔧</span>
+            <div class="vs-name">FAHMITHA</div>
+            <div class="vs-info">Civil Engg · 3rd Year<br/>Same College 🏫</div>
+          </div>
+        </div>
+        <div class="never-met-banner">4 YEARS · SAME CAMPUS · NEVER MET ONCE!</div>
+        <div style="margin:20px 0;text-align:center;">
+          <div style="font-size:clamp(32px,5vw,56px);">👨‍🎓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🤷&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;👩‍🎓</div>
+          <div style="font-family:'Caveat',cursive;font-size:clamp(16px,2.5vw,22px);color:rgba(255,255,255,.8);margin-top:8px;">
+            Walking the same corridors... sitting in the same cafeteria... breathing the same campus air...<br/>
+            <strong style="color:var(--gold-l);">and never once catching each other's eyes.</strong>
+          </div>
+        </div>
+        <div class="allah-plan">🤲 THIS WAS ALLAH'S PERFECT PLAN 🤲</div>
+        <div style="font-family:'Caveat',cursive;font-size:clamp(16px,2.5vw,22px);color:rgba(255,255,255,.75);text-align:center;margin-top:12px;max-width:600px;margin-left:auto;margin-right:auto;">
+          He was keeping them for each other — not in college halls, but through a phone call across oceans, through their parents, through <em style="color:var(--gold-l);">the most beautiful timing only He could design.</em>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CHAPTER 4: MILESTONES ── -->
+  <div class="reveal" style="max-width:1100px;margin:0 auto 16px;">
+    <div class="ch-label">
+      <div class="ch-num" style="background:#ff69b4;">4</div>
+      <div class="ch-name">THE MILESTONES</div>
+    </div>
+  </div>
+  <div class="reveal" style="max-width:1100px;margin:0 auto 48px;">
+    <div class="milestone-row">
+      <div class="ms">
+        <span class="ms-icon">💍</span>
+        <span class="ms-date">JAN 2026</span>
+        <div class="ms-title">ENGAGED!</div>
+        <div class="ms-desc">Rings exchanged. Families united. Forever began officially.</div>
+      </div>
+      <div class="ms">
+        <span class="ms-icon">🌸</span>
+        <span class="ms-date">AUG 19, 2026</span>
+        <div class="ms-title">MARRIED!</div>
+        <div class="ms-desc">The most beautiful day. Two hearts, one promise, forever.</div>
+      </div>
+      <div class="ms">
+        <span class="ms-icon">🌊</span>
+        <span class="ms-date">ANDAMAN</span>
+        <div class="ms-title">OUR TRIP!</div>
+        <div class="ms-desc">Waves around their feet. Smiles that never stopped. Pure joy.</div>
+      </div>
+      <div class="ms">
+        <span class="ms-icon">🍼</span>
+        <span class="ms-date">MAY 2027</span>
+        <div class="ms-title">+1 COMING!</div>
+        <div class="ms-desc">The most precious chapter is arriving. Inshallah! 🤲</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── BABY SPECIAL ── -->
+  <div class="reveal" style="max-width:1100px;margin:0 auto 48px;">
+    <div class="baby-panel">
+      <span class="baby-title">🍼 BABY ON THE WAY! 🍼</span>
+      <div class="baby-emoji">👶</div>
+      <div class="baby-text" style="margin-top:16px;">
+        And now — the sweetest news of all.<br/>
+        A little soul is coming, <strong>Inshallah, May 2027.</strong><br/><br/>
+        Suhail & Fahmitha — soon to be <strong>THREE</strong>. 🤲<br/>
+        May Allah bless this precious baby with the best of health, happiness and all the love that fills this beautiful home.<br/>
+        <strong>Ameen, Ya Rabb. 🤍</strong>
+      </div>
+      <div style="font-family:'Bangers',cursive;font-size:clamp(22px,4vw,42px);color:#cc2277;margin-top:20px;letter-spacing:3px;">COMING SOON · MAY 2027 🌸</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+  SECTION 3 — PHOTO GALLERY
+══════════════════════════════ -->
+<section id="gallery">
+  <div class="gallery-header reveal">
+    <div class="gallery-title">OUR PHOTOS</div>
+    <div style="font-family:'Caveat',cursive;font-size:20px;color:rgba(255,255,255,.5);margin-top:8px;">Click any photo to open full screen 🔍</div>
+  </div>
+  <div class="gallery-grid reveal" id="galleryGrid"></div>
+</section>
+
+<!-- ══════════════════════════════
+  SECTION 4 — LOVE LETTER
+══════════════════════════════ -->
+<section id="letter">
+  <div style="text-align:center;margin-bottom:36px;" class="reveal">
+    <div style="font-family:'Bangers',cursive;font-size:clamp(32px,6vw,64px);color:var(--ink);display:inline-block;background:var(--rose);color:#fff;padding:8px 32px;border:4px solid var(--ink);box-shadow:var(--shadow);letter-spacing:4px;">💌 FROM SUHAIL'S HEART</div>
+  </div>
+  <div class="letter-comic reveal">
+    <div class="letter-comic-top">
+      <div class="letter-comic-top-icon">✉️</div>
+      <div class="letter-comic-top-title">TO MY DEAREST FAHMITHA</div>
+    </div>
+    <div class="letter-body-wrap letter-lines">
+      <p class="l-sal">My dearest Fahmitha,</p>
+      <p class="l-body">You are not just my wife; you are my happiness, my peace and my favourite person. Every day, I thank Allah for bringing you into my life.
+
+My Sufi, I wish to see you smile every single day. No matter where life takes us, I promise to stand beside you, love you and choose you every single day.
+
+Happy Birthday, my love. May Allah bless you with endless happiness, good health and beautiful years ahead. Inshallah, we will create countless beautiful memories together.</p>
+      <div class="l-sign">
+        <span class="l-sign-name">Forever yours, Suhail ❤️</span>
+        <span class="l-sign-sub">Your Loving Husband · Always</span>
+      </div>
+    </div>
+    <div class="letter-stamp">
+      <span>❤️</span>
+      LOVE<br/>SEALED
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+  SECTION 5 — FINALE (SPLASH)
+══════════════════════════════ -->
+<section id="finale">
+  <div class="finale-bg-pattern"></div>
+  <div class="finale-hearts-wrap" id="finHearts"></div>
+  <div class="reveal" style="position:relative;z-index:1;width:100%;display:flex;justify-content:center;">
+    <div class="splash-box">
+      <span class="splash-label">★ THE GRAND FINALE ★</span>
+      <div class="splash-title">HAPPY BIRTHDAY,</div>
+      <span class="splash-name">FAHMITHA!</span>
+      <span class="splash-heart">❤️</span>
+      <p class="splash-quote">
+        "My Sufi, you are my favourite chapter,<br/>
+        my sweetest blessing<br/>
+        and my forever destination."<br/><br/>
+        "One life, one heart, one love —<br/>
+        <strong style="font-family:'Bangers',cursive;font-size:1.4em;color:var(--rose);letter-spacing:3px;">YOU.</strong>"
+      </p>
+      <span class="splash-forever">Forever & Always,</span>
+      <div class="splash-sign">SUHAIL ❤️</div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA -->
+<script src="photos.js"></script>
+<script src="songs.js"></script>
+
+<script>
+// SONG DISPLAY INFO
+const SONG_DISPLAY = [
+  { title:'Marandhu Poche', artist:'Sean Roldan · With Love' },
+  { title:'Mundhinam Paarthene', artist:'Harris Jayaraj · Vaaranam Aayiram' },
+];
+const CAPTIONS = [
+  'Fahmitha & Suhail 🌊','Back to back, heart to heart 💙',
+  'Embraced by the ocean ❤️','Our love, our story 🌿',
+  'My queen on the rocks 👑','Forever beside you 🌊',
+  'Arms wide, heart full of you ❤️','Andaman with my Sufi 🌸'
+];
+
+// ── LOADER ──
+window.addEventListener('load',()=>{
+  setTimeout(()=>{ document.getElementById('loader').classList.add('hide'); initSlideshow(); buildGallery(); startFinHearts(); }, 3000);
+});
+
+// ── CURSOR ──
+const cur=document.getElementById('cursor'), cr=document.getElementById('cRing');
+document.addEventListener('mousemove',e=>{
+  cur.style.left=e.clientX+'px'; cur.style.top=e.clientY+'px';
+  setTimeout(()=>{ cr.style.left=e.clientX+'px'; cr.style.top=e.clientY+'px'; },80);
+});
+
+// ── PARTICLES (small dots in dark sections) ──
+// kept lightweight
+
+// ── SLIDESHOW ──
+let slideIdx=0,slideTimer;
+function initSlideshow(){
+  const ss=document.getElementById('slideshow');
+  PHOTOS.forEach((src,i)=>{
+    const d=document.createElement('div');
+    d.className='slide-cover'; d.style.backgroundImage=`url(${src})`; ss.appendChild(d);
+  });
+  showSlide(0);
+  slideTimer=setInterval(()=>{ slideIdx=(slideIdx+1)%PHOTOS.length; showSlide(slideIdx); },5500);
+}
+function showSlide(i){
+  document.querySelectorAll('.slide-cover').forEach((s,idx)=>s.classList.toggle('active',idx===i));
+}
+
+// ── GALLERY ──
+function buildGallery(){
+  const grid=document.getElementById('galleryGrid');
+  PHOTOS.forEach((src,i)=>{
+    const item=document.createElement('div'); item.className='g-item';
+    item.innerHTML=`<img src="${src}" alt="${CAPTIONS[i]||''}" loading="lazy"/><div class="g-num">#${i+1}</div><div class="g-cap">${CAPTIONS[i]||''}</div>`;
+    item.addEventListener('click',()=>openLB(i)); grid.appendChild(item);
+  });
+}
+let lbIdx=0;
+function openLB(i){ lbIdx=i; document.getElementById('lbImg').src=PHOTOS[i]; document.getElementById('lightbox').classList.add('open'); document.body.style.overflow='hidden'; }
+document.getElementById('lbClose').addEventListener('click',()=>{ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; });
+document.getElementById('lbPrev').addEventListener('click',()=>{ lbIdx=(lbIdx-1+PHOTOS.length)%PHOTOS.length; document.getElementById('lbImg').src=PHOTOS[lbIdx]; });
+document.getElementById('lbNext').addEventListener('click',()=>{ lbIdx=(lbIdx+1)%PHOTOS.length; document.getElementById('lbImg').src=PHOTOS[lbIdx]; });
+document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target===e.currentTarget){ e.currentTarget.classList.remove('open'); document.body.style.overflow=''; } });
+document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; } });
+
+// ── SCROLL REVEAL ──
+document.querySelectorAll('.reveal').forEach(r=>
+  new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('vis'); }); },{threshold:.1}).observe(r)
+);
+
+// ── NAV TABS ──
+const SEC=['hero','story','gallery','letter','finale'];
+const tabs=document.querySelectorAll('.ntab');
+function updateTabs(){
+  const mid=scrollY+innerHeight*.4;
+  SEC.forEach((id,i)=>{
+    const el=document.getElementById(id); if(!el) return;
+    if(mid>=el.offsetTop&&mid<el.offsetTop+el.offsetHeight){
+      tabs.forEach(t=>t.classList.remove('on')); tabs[i]&&tabs[i].classList.add('on');
+    }
+  });
+}
+window.addEventListener('scroll',updateTabs);
+tabs.forEach((t,i)=>t.addEventListener('click',()=>document.getElementById(SEC[i]).scrollIntoView({behavior:'smooth'})));
+
+// ── CONFETTI ──
+let confFired=false;
+new IntersectionObserver(es=>{ es.forEach(e=>{ if(e.isIntersecting&&!confFired){ confFired=true; fireConfetti(); } }); },{threshold:.3}).observe(document.getElementById('finale'));
+function fireConfetti(){
+  const cols=['#e8294a','#d4a017','#f5c842','#fff','#ff69b4','#1b6ca8'];
+  for(let i=0;i<120;i++){
+    setTimeout(()=>{
+      const c=document.createElement('div');
+      c.style.cssText=`position:fixed;left:${Math.random()*100}vw;top:-10px;width:${Math.random()*12+5}px;height:${Math.random()*12+5}px;background:${cols[Math.floor(Math.random()*cols.length)]};border-radius:${Math.random()>.5?'50%':'2px'};border:2px solid #0f0a08;pointer-events:none;z-index:9500;animation:confettiFall ${Math.random()*3+2.5}s linear forwards;`;
+      document.body.appendChild(c); setTimeout(()=>c.remove(),6000);
+    },i*28);
+  }
+}
+// add confetti keyframes
+const st=document.createElement('style');
+st.textContent='@keyframes confettiFall{0%{transform:translateY(-10px) rotate(0);opacity:1}100%{transform:translateY(100vh) rotate(720deg);opacity:0}}';
+document.head.appendChild(st);
+
+// ── FINALE HEARTS ──
+function startFinHearts(){
+  const wrap=document.getElementById('finHearts');
+  const emj=['❤️','🌹','💖','✨','💕','🌸','💝','🍼','⭐','💫'];
+  setInterval(()=>{
+    const h=document.createElement('div'); h.className='fh';
+    h.textContent=emj[Math.floor(Math.random()*emj.length)];
+    h.style.cssText=`left:${Math.random()*100}%;bottom:0;font-size:${Math.random()*24+14}px;animation-duration:${Math.random()*9+8}s;animation-delay:${Math.random()*3}s;`;
+    wrap.appendChild(h); setTimeout(()=>h.remove(),18000);
+  },450);
+}
+
+// ── CLICK SPARKLES ──
+document.addEventListener('click',e=>{
+  for(let i=0;i<10;i++){
+    const s=document.createElement('div');
+    const ang=(i/10)*Math.PI*2, dist=Math.random()*65+20;
+    s.style.cssText=`position:fixed;left:${e.clientX}px;top:${e.clientY}px;width:8px;height:8px;border-radius:50%;background:${Math.random()>.5?'#e8294a':'#d4a017'};border:2px solid #0f0a08;pointer-events:none;z-index:9999;transition:transform .6s ease,opacity .6s ease;transform:translate(-50%,-50%);`;
+    document.body.appendChild(s);
+    requestAnimationFrame(()=>{ s.style.transform=`translate(calc(-50% + ${Math.cos(ang)*dist}px),calc(-50% + ${Math.sin(ang)*dist}px))`; s.style.opacity='0'; });
+    setTimeout(()=>s.remove(),700);
+  }
+});
+
+// ── MUSIC PLAYER ──
+const audio=new Audio();
+let curSong=0, isPlaying=false;
+function loadSong(i){
+  audio.src=SONGS_DATA[i].src;
+  document.getElementById('mSong').textContent='🎵 '+SONG_DISPLAY[i].title;
+  document.getElementById('mArtist').textContent=SONG_DISPLAY[i].artist+' · Playing for Fahmitha ❤️';
+}
+function playSong(){
+  audio.play().then(()=>{
+    isPlaying=true;
+    document.getElementById('mPlay').textContent='⏸';
+    document.getElementById('mRecord').classList.remove('paused');
+  }).catch(()=>{});
+}
+function pauseSong(){
+  audio.pause(); isPlaying=false;
+  document.getElementById('mPlay').textContent='▶';
+  document.getElementById('mRecord').classList.add('paused');
+}
+function nextSong(){ curSong=(curSong+1)%SONGS_DATA.length; loadSong(curSong); playSong(); }
+function prevSong(){ curSong=(curSong-1+SONGS_DATA.length)%SONGS_DATA.length; loadSong(curSong); playSong(); }
+audio.addEventListener('timeupdate',()=>{ if(audio.duration) document.getElementById('prog').style.width=(audio.currentTime/audio.duration*100)+'%'; });
+audio.addEventListener('ended',nextSong);
+document.getElementById('progWrap').addEventListener('click',e=>{ const r=e.currentTarget.getBoundingClientRect(); audio.currentTime=audio.duration*((e.clientX-r.left)/r.width); });
+document.getElementById('mPlay').addEventListener('click',()=>isPlaying?pauseSong():playSong());
+document.getElementById('mNext').addEventListener('click',nextSong);
+document.getElementById('mPrev').addEventListener('click',prevSong);
+loadSong(0);
+</script>
+</body>
+</html>
